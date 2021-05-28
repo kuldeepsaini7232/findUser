@@ -23,10 +23,11 @@ const Home=()=>{
                 type:"error",
             })
         }
-        if(!context.user?.uid){
-            return <Redirect to="/signin"></Redirect>
-        }
     }
+        if(!context.user?.uid){
+            return (<Redirect to="/signin"></Redirect>)
+        }
+   
     return(
        <Container>
            <Row className="mt-3">
@@ -38,7 +39,7 @@ const Home=()=>{
                     placeholder="provide the username"/>
                    </InputGroup>
                    <InputGroupAddon addonType="append">
-                   <Button onClick={fetchDatail} color="primary">Fetch User</Button>
+                   <Button onClick={fetchDatail} className="mt-2" color="primary">Fetch User</Button>
                    </InputGroupAddon>
                    {user?<UserCard user={user}/>:null}
                </Col>
